@@ -1,13 +1,10 @@
-require("dotenv").config();
 const path = require('path');
-const webpack = require("webpack");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: path.join(__dirname, "/client/src/index.jsx"),
+  entry: path.join(__dirname, "src", "index.js"),
   output: {
-    path: path.resolve(__dirname, "/client/dist"),
-    filename: "bundle.js"
+    path: path.resolve(__dirname, "dist"),
   },
   module: {
     rules: [
@@ -25,7 +22,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, "/client/dist/index.html"),
+      template: path.join(__dirname, "client", "dist", "index.html"),
     }),
   ],
 }
